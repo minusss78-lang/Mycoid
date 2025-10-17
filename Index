@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>MycoID Lite</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header><h1>🍄 MycoID Lite – Ibrido 300</h1>
+      <div class="langs">
+        <button data-lang="it">🇮🇹</button><button data-lang="en">🇬🇧</button>
+        <button data-lang="fr">🇫🇷</button><button data-lang="zh">🇨🇳</button>
+        <button data-lang="ja">🇯🇵</button><button data-lang="ru">🇷🇺</button>
+        <button data-lang="ro">🇷🇴</button><button data-lang="th">🇹🇭</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="selectors">
+        <select id="cappello">
+          <option value="">Cappello ▾</option>
+          <option value="convesso">Convesso</option>
+          <option value="campanulato">Campanulato</option>
+          <option value="imbutiforme">Imbutiforme</option>
+          <option value="piatto">Piatto</option>
+        </select>
+        <select id="lamelle">
+          <option value="">Imenio ▾</option>
+          <option value="lamelle">Lamelle</option>
+          <option value="pori">Pori</option>
+          <option value="aculei">Aculei</option>
+          <option value="liscio">Liscio</option>
+        </select>
+        <select id="colore">
+          <option value="">Colore ▾</option>
+          <option value="bianco">Bianco</option><option value="giallo">Giallo</option>
+          <option value="arancio">Arancio</option><option value="rosso">Rosso</option>
+          <option value="marrone">Marrone</option><option value="bruno">Bruno</option>
+        </select>
+        <select id="habitat">
+          <option value="">Habitat ▾</option>
+          <option value="bosco_latifoglie">Bosco latifoglie</option>
+          <option value="bosco_conifere">Bosco conifere</option>
+          <option value="prato">Prato</option>
+          <option value="su_legno">Su legno</option>
+          <option value="ulivi">Sotto ulivi</option>
+        </select>
+        <select id="stagione">
+          <option value="">Stagione ▾</option>
+          <option value="primavera">Primavera</option>
+          <option value="estate">Estate</option>
+          <option value="autunno">Autunno</option>
+          <option value="inverno">Inverno</option>
+        </select>
+      </section>
+
+      <div class="controls">
+        <button id="searchBtn">🔍 Identifica</button>
+        <button id="resetBtn">🔄 Reset</button>
+      </div>
+
+      <section id="results"><p class="hint">Seleziona i caratteri e premi “Identifica”.</p></section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

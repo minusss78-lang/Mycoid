@@ -1,0 +1,14 @@
+body{font-family:sans-serif;background:#faf7f2;margin:0;color:#222}
+.container{max-width:900px;margin:20px auto;padding:16px;background:#fff;border-radius:12px;box-shadow:0 0 20px rgba(0,0,0,.05)}
+header{display:flex;justify-content:space-between;align-items:center}
+.langs button{background:none;border:0;font-size:18px;margin-left:4px;cursor:pointer}
+.selectors{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0}
+select{padding:8px;border:1px solid #ddd;border-radius:8px;min-width:130px}
+.controls{margin-top:10px;display:flex;gap:8px}
+button{cursor:pointer;padding:8px 12px;border-radius:8px;border:0}
+#searchBtn{background:#6a3f2a;color:#fff}#resetBtn{background:#ccc}
+.result{display:flex;gap:10px;border:1px solid #eee;border-radius:10px;padding:10px;margin:10px 0}
+.result img{width:100px;height:80px;object-fit:cover;border-radius:6px}
+.meta h3{margin:0;color:#6a3f2a;font-size:16px}
+.meta p{margin:4px 0}
+.hint{color:#777}

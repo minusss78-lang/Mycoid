@@ -1,0 +1,31 @@
+async function loadDB(){
+  const r=await fetch("https://raw.githubusercontent.com/openmyco/mycoid-lite-db/main/funghi300.json");
+  window.db=await r.json();
+}
+function val(id){return document.getElementById(id).value;}
+function match(it){
+  const c=it.caratteri;
+  for(let k of ["cappello","imenio","colore","habitat","stagione"])
+    if(val(k)&&c[k]!==val(k))return false;
+  return true;
+}
+function render(list){
+  const res=document.getElementById("results");
+  res.innerHTML="";
+  if(!list.length){res.innerHTML=`<p class='hint'>Nessun risultato. <a href='#' id='web'>Cerca online</a></p>`;
+    document.getElementById("web").onclick=webSearch;return;}
+  list.forEach(it=>{
+    res.innerHTML+=`<div class='result'><img src='${it.immagine}'><div class='meta'><h3>${it.nome_comune} (${it.nome_scientifico})</h3><p>${it.descrizione}</p><p><a href='${it.link_mycobank}' target='_blank'>MycoBank</a> | <a href='${it.link_wiki}' target='_blank'>Wikipedia</a></p></div></div>`;
+  });
+}
+function search(){render(window.db.filter(match));}
+function webSearch(){
+  const q=encodeURIComponent(["cappello","lamelle","colore","habitat","stagione"].map(val).join(" "));
+  window.open("https://www.mycobank.org/?searchTerm="+q,"_blank");
+  window.open("https://en.wikipedia.org/w/index.php?search="+q,"_blank");
+}
+document.addEventListener("DOMContentLoaded",()=>{
+  loadDB();
+  document.getElementById("searchBtn").onclick=search;
+  document.getElementById("resetBtn").onclick=()=>{document.querySelectorAll("select").forEach(s=>s.value="");document.getElementById("results").innerHTML="<p class='hint'>Reset completato.</p>";};
+});
